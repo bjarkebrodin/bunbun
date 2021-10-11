@@ -1,0 +1,39 @@
+
+#window,
+#outer-box,
+#inner-box,
+#input {
+  font-family: 'Iosevka';
+  font-size: 18px;
+  font-weight: 600;
+  color: #AFAFAF;
+}
+
+#window {
+  border: 1px solid #232323;
+}
+
+#window,
+#outer-box,
+#inner-box {
+  background-color: rgba(35,35,35,.7);
+}
+
+#input {
+  background-color: transparent;
+  border: 0px solid white;
+  padding: 8px;
+}
+
+#entry {
+  padding: 8px;
+}
+
+#entry:selected {
+  border: 0px solid white;
+}
+
+#outer-box {
+  border: 0px solid white;
+}
+

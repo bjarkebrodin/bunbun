@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+
+# Installation:
+# - Run this script from dotfiles dir
+# - Done!
+
+# Link all the dots
+echo ""
+echo "Linking top-level dotfiles"
+echo ""
+for file in $(ls -I 'LICENSE' -I 'bootstrap' -I 'config' -I 'zprezto' -I 'notes'); do
+  echo $(pwd)/$file
+  echo "-> $HOME/.$file"
+  ln -sfF "$(pwd)/$file" "$HOME/.$file"
+done
+echo ""
+
+# Create deltas for selected config dirs
+echo "Populating .config"
+echo ""
+if [[ ! -d "$HOME/.config" ]]; then mkdir "$HOME/.config"; fi
+for file in $(ls config); do
+
+  if [[ -d "$HOME/.config/$file" ]]; then 
+    rm -rf "$HOME/.config/$file"; 
+  fi
+
+  echo $(pwd)/config/$file
+  echo "-> $HOME/.config/$file"
+  ln -sfF "$(pwd)/config/$file" "$HOME/.config/$file"
+
+done
+echo ""
+
+# Link config files in odd locations
+# pass
+
+# Setup prezto
+
+
+
+
