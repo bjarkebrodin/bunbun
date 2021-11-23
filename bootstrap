@@ -1,14 +1,20 @@
 #!/usr/bin/env zsh
 
+#
 # Installation:
 # - Run this script from dotfiles dir
 # - Done!
+#
+# Note that the script is idempotent, but will silently overwrite any dotfiles that conflict
+# use at own discretion, and back up any config you have before running the script
+#
+# In particular it will currently overwrite the entire .config folder
+# fixme: only overwrite the entries in .config for which we actually have any files
 
-# Link all the dots
 echo ""
-echo "Linking top-level dotfiles"
+echo "Linking dotfiles"
 echo ""
-for file in $(ls -I 'LICENSE' -I 'bootstrap'); do
+for file in $(ls -I 'LICENSE' -I 'bootstrap' -I 'wallpaper.png' -I 'setup'); do
   sym=$(pwd)/$file
   tar=$HOME/.$file
 
@@ -24,7 +30,8 @@ for file in $(ls -I 'LICENSE' -I 'bootstrap'); do
   fi
 
   ln -sfF "$(pwd)/$file" "$HOME/.$file"
-
 done
 echo ""
+
+ln -sfF "$(pwd)/wallpaper.png" "$HOME/.local/share/backgrounds/"
 

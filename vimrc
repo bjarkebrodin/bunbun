@@ -3,7 +3,7 @@
 
 
 " shared clipboard
-  set clipboard=unnamed
+  set clipboard=unnamedplus
 
 " no backups necessarry
   set nobackup

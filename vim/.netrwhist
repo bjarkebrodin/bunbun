@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/bjarke/SMAPP/backend'
+let g:netrw_dirhist_2='/home/bjarke/.zprezto'
 let g:netrw_dirhist_1='/home/bjarke/.zsh/plugins/zsh-system-clipboard'
