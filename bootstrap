@@ -8,11 +8,23 @@
 echo ""
 echo "Linking top-level dotfiles"
 echo ""
-for file in $(ls -I 'LICENSE' -I 'bootstrap' -I 'config' -I 'notes' -I 'vim'); do
-  echo $(pwd)/$file
-  echo "-> $HOME/.$file"
+for file in $(ls -I 'LICENSE' -I 'bootstrap'); do
+  sym=$(pwd)/$file
+  tar=$HOME/.$file
+
+  if [[ -d $file ]]; then
+       # Prevents nesting symlinks within previous sym
+    if [[ -d $tar ]]; then rm -rf $tar; fi
+
+    echo $tar/
+    echo "-> $sym/"
+  else
+    echo $tar
+    echo "-> $sym"
+  fi
+
   ln -sfF "$(pwd)/$file" "$HOME/.$file"
+
 done
 echo ""
-
 
