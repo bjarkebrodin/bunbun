@@ -1,9 +1,13 @@
-  filetype plugin on
-  filetype indent on
+" load defaults
+  source $VIMRUNTIME/defaults.vim
+  source ~/.vim/tabcompletion.vim
+  source ~/.vim/autocomment.vim
 
+
+  filetype plugin indent on
 
 " shared clipboard
-  set clipboard=unnamedplus
+  set clipboard=unnamed
 
 " no backups necessarry
   set nobackup
@@ -30,7 +34,7 @@
   " highlight Normal ctermbg=none guibg=none
   " highlight SignColumn ctermbg=none guibg=none
   " highlight LineNr ctermbg=none guibg=none
-  
+
 
 " indent
   set expandtab
@@ -52,7 +56,6 @@
 
 " search-as-you-type behaviour
 	set incsearch
-	set hlsearch
   set showmatch
 
 " 'Q' in normal mode enters Ex mode. You almost never want this.
@@ -64,5 +67,16 @@
   set t_vb=
   set tm=500
 
+" file completion
+  set wildmode=longest,full
+"   set wildmenu " visible wildmenu
+
+" autocompletion voodoo, need tabcompletion.vim
+  inoremap <tab> <c-r>=AdaptiveTabComplete()<CR>
+ 
 " shortcuts
-  noremap <Space> :w<CR>
+  nnoremap <Space> :w<CR>
+  nnoremap K :tabnext<CR>
+  nnoremap J :tabprev<CR>
+
+

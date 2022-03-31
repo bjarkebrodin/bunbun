@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/bjarke/.vim'
+let g:netrw_dirhist_1='/Users/bjarke/.zprezto'
+let g:netrw_dirhist_0='/Users/bjarke/SMAPP/Backend/test'
+let g:netrw_dirhist_9='/Users/bjarke/ITU/MachineLearning/python/torch_tutorial/data'
+let g:netrw_dirhist_8='/Users/bjarke/Notes/Nginx/CertStuff'
+let g:netrw_dirhist_7='/Users/bjarke/Notes/Nginx'
+let g:netrw_dirhist_6='/Users/bjarke/Notes/Nginx/nginx'
+let g:netrw_dirhist_5='/Users/bjarke'
+let g:netrw_dirhist_4='/Users/bjarke/.local'
 let g:netrw_dirhist_3='/home/bjarke/SMAPP/backend'
-let g:netrw_dirhist_2='/home/bjarke/.zprezto'
-let g:netrw_dirhist_1='/home/bjarke/.zsh/plugins/zsh-system-clipboard'
