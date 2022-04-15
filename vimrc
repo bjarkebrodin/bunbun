@@ -3,7 +3,6 @@
   source ~/.vim/tabcompletion.vim
   source ~/.vim/autocomment.vim
 
-
   filetype plugin indent on
 
 " shared clipboard
@@ -70,13 +69,39 @@
 " file completion
   set wildmode=longest,full
 "   set wildmenu " visible wildmenu
-
-" autocompletion voodoo, need tabcompletion.vim
-  inoremap <tab> <c-r>=AdaptiveTabComplete()<CR>
- 
-" shortcuts
-  nnoremap <Space> :w<CR>
+	
+" leader
+  let mapleader=","
+  
+" tab switching in normal mode 
   nnoremap K :tabnext<CR>
   nnoremap J :tabprev<CR>
 
+" window switching in normal mode
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
+  nnoremap <C-h> <C-w>h
+
+" new files
+  nnoremap <C-n> :tabnew 
+
+" autocompletion voodoo, need tabcompletion.vim
+  inoremap <Tab> <c-r>=AdaptiveTabComplete()<CR>
+ 
+" save on space in normal mode
+" nmap <Space> :w<CR>
+
+" close window
+  nnoremap <C-q> :q<CR>
+  nnoremap <Leader>wq :wq<CR>
+
+  
+
+" tex niceness
+command! -nargs=+ Silent
+\   execute 'silent ! <args>'
+\ | redraw!
+
+nmap <Space> :w<CR>:silent exec "!(pdflatex % && open -a Preview && open -a iTerm) > /dev/null"<CR>:redraw!<CR>
 
